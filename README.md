@@ -1,5 +1,5 @@
 # pwdgen
-Password generator. Generates password from key phrase.
+Password generator. Generates password from key phrase. Agorithm ensures that at least one punctuacion, one lowercase and one uppercase symbol is in the generated password.
 
 ## Example:
 
@@ -19,6 +19,3 @@ optional arguments:
 -l LENGTH, --length LENGTH
                         Generated password length
 ```
-
->**Note**
-Agorithm ensures that at least one punctuacion, one lowercase and one uppercase symbol is in the generated password.
