@@ -1,0 +1,43 @@
+
+
+<RootWidget>:
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: dp(64)
+        spacing: dp(16)
+        size_hint_max_x: dp(600)
+        size_hint_min_x: dp(320)
+
+        MDTextField:
+            multiline: True
+            size_hint: (.5, None)
+            hint_text: "Введите ключевое слово"
+            text: ''
+            on_text: root.set_key(self, self.text)
+
+        MDTextField:
+            multiline: False
+            size_hint: (.2, None)
+            pos_hint:{"left":0.5, "top":1}
+            height: dp(30)
+            font_size: dp(14)
+            hint_text: "Длина пароля"
+            max_text_length: 3
+            required: True
+            text: str(root.pwd_len)
+            on_text: root.set_len(self, self.text)
+
+        MDRectangleFlatButton:
+            id: gen_button
+            text: "Сгенерировать пароль"
+            on_press: root.generate_pwd()
+            height: dp(40)
+            size_hint: (.5, None)
+            pos_hint:{"left":0.5, "top":1}
+            disabled: True
+
+        MDLabel:
+            id: resultLabel
+            pos_hint:{"center_x":0.5, "top":1}
+
